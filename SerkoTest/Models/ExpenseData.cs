@@ -17,6 +17,5 @@ namespace SerkoTest.Models
         public string totalwithgst { get; set; }
         public Double totalwithoutgst { get; set; }
         public Double gst { get; set; }
-        public string error { get; set; }
     }
 }
