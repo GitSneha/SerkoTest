@@ -47,8 +47,9 @@ namespace SerkoTest.Controllers
                     ExpenseData ed =  _extractDataService.ExtractXMLIslands(xmlDoc);
 
                     //calculate GST
-                    ed.gst = _calculationService.CalculateGST(System.Convert.ToDouble(ed.totalwithgst));
-                    ed.totalwithoutgst = _calculationService.CalculateTotalWithoutGST(System.Convert.ToDouble(ed.totalwithgst));
+                    double total = System.Convert.ToDouble(ed.totalwithgst);
+                    ed.gst = _calculationService.CalculateGST(total);
+                    ed.totalwithoutgst = _calculationService.CalculateTotalWithoutGST(total);
 
                     return JsonConvert.SerializeObject(ed);
                 }
